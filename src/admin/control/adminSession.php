@@ -73,7 +73,7 @@ function logOut(){
 
     session_destroy();
 
-    header("Location: ../admin/admin.php");
+    header("Location: ../admin.php");
 
 
 }
