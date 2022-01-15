@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+}
+main {
+   height: 90vh;
+}
+
+.client {
+    margin: 0 1vh 0 1vh;
+}
+
+.admin {
+    margin: 0 1vh 0 1vh;
+}
+
+.redirect:hover {
+cursor: pointer;
+}
+
+.border {
+    padding: 15vh;
+}
+
+.nav-link p {
+    font-size: xx-large;
+}
