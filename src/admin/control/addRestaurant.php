@@ -35,7 +35,7 @@ VALUES ('$firstName', '$lastName', '$restaurantName', '$adress', '$phone', '$car
 if ($conn->query($sql) === TRUE) {
 header("Location: ../newRestaurant.php?restaurantAdded");
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  header("Location: ../newRestaurant.php?error");
 }
 
 }

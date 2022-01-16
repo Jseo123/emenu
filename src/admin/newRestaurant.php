@@ -17,6 +17,9 @@ sessionCheck();
 if(isset($_GET["restaurantAdded"])){
         confirmationMessage();
 }
+if(isset($_GET["error"])){
+    errorMessage();
+}
 ?>
 <form class="employeeForm" action="./control/addRestaurant.php" method="POST" id="formulary">
             <div class="formFlex">
