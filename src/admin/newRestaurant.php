@@ -12,7 +12,11 @@
 <body>
 <?php require_once  "./../htmls/header.html";
 require_once "./control/adminSession.php";
+require_once "./control/databaseManager.php";
 sessionCheck();
+if(isset($_GET["restaurantAdded"])){
+        confirmationMessage();
+}
 ?>
 <form class="employeeForm" action="./control/addRestaurant.php" method="POST" id="formulary">
             <div class="formFlex">
