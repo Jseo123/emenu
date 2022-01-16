@@ -33,6 +33,7 @@ $passwordCheck = password_verify($pass, $dbPassword);
 if ($passwordCheck === true){
     session_start();
     $_SESSION["admin"] = $dbUser;
+    unset($_POST);
     header("Location: ../panel.php");
 }
 else {

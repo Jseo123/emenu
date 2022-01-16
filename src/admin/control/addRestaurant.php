@@ -11,7 +11,7 @@ if (isset($_POST["cvc"])) {
   $expirationDate = $data["expirationDate"];
   $email = $data["email"];
   $user = $data["user"];
-  $password = password_hash($data["password"], PASSWORD_DEFAULT);
+  $pass = password_hash($data["pass"], PASSWORD_DEFAULT);
   $notes = $data["notes"];
   unset($_POST);
   //defines server variables for sql.
@@ -28,8 +28,8 @@ if (isset($_POST["cvc"])) {
     die("Connection failed: " . mysqli_connect_error());
   }
 
-  $sql = "INSERT INTO restaurants (first_name, last_name, restaurant_name, adress, phone, card_number, cvc, expiration_date, email, user, password, notes)
-VALUES ('$firstName', '$lastName', '$restaurantName', '$adress', '$phone', '$cardNumber', '$cvc', '$expirationDate', '$email', '$user', '$password', '$notes')";
+  $sql = "INSERT INTO restaurants (first_name, last_name, restaurant_name, adress, phone, card_number, cvc, expiration_date, email, user, password, notes, creation_date)
+VALUES ('$firstName', '$lastName', '$restaurantName', '$adress', '$phone', '$cardNumber', '$cvc', '$expirationDate', '$email', '$user', '$pass', '$notes', now())";
 
 if ($conn->query($sql) === TRUE) {
 header("Location: ../newRestaurant.php?restaurantAdded");
