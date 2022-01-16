@@ -11,10 +11,9 @@ if (isset($_POST["cvc"])) {
   $expirationDate = $data["expirationDate"];
   $email = $data["email"];
   $user = $data["user"];
-  $password = $data["password"];
+  $password = password_hash($data["password"], PASSWORD_DEFAULT);
   $notes = $data["notes"];
   unset($_POST);
-  print_r($data);
   //defines server variables for sql.
   $servername = "localhost";
   $username = "Jose";
