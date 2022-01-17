@@ -20,6 +20,9 @@ if(isset($_GET["restaurantAdded"])){
 if(isset($_GET["error"])){
     errorMessage();
 }
+if(isset($_GET["duplication"])){
+    duplicationMessage();
+}
 ?>
 <form class="employeeForm" action="./control/addRestaurant.php" method="POST" id="formulary">
             <div class="formFlex">
@@ -79,7 +82,7 @@ if(isset($_GET["error"])){
             <div class="formFlex">
                 <div class="flexMember">
                 <label for="pass">contraseña</label><br>
-            <input type="password" id="password" name="password" value="" required>
+            <input type="password" id="pass" name="pass" value="" required>
             </div>
             <div class="flexMember">
             <label for="notes">Observaciones</label><br>

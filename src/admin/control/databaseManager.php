@@ -7,8 +7,12 @@ function errorMessage(){
     echo "<p class ='alert alert-danger d-flex justify-content-center'>!Error al rellenar los datos!</p>";
 }
 
-function addRestaurant($_POST){
-    $data = $_POST;
+function duplicationMessage(){
+  echo "<p class ='alert alert-danger d-flex justify-content-center'>!El usuario o email ya existe!</p>";
+}
+
+function addRestaurant($array){
+    $data =$array;
   $firstName = $data["ownerName"];
   $lastName = $data["lastName"];
   $restaurantName = $data["restaurantName"];
@@ -21,7 +25,6 @@ function addRestaurant($_POST){
   $user = $data["user"];
   $pass = password_hash($data["pass"], PASSWORD_DEFAULT);
   $notes = $data["notes"];
-  unset($_POST);
   //defines server variables for sql.
   $servername = "localhost";
   $username = "Jose";
@@ -30,7 +33,9 @@ function addRestaurant($_POST){
   $duplicateError = 1062;
 
   // Create connection
+  try {
   $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 
   // Check connection
   if (!$conn) {
@@ -45,5 +50,8 @@ header("Location: ../newRestaurant.php?restaurantAdded");
 } else {
   header("Location: ../newRestaurant.php?error");
 }
-
+}
+catch(Exception $duplicateError){
+  header("Location: ../newRestaurant.php?duplication");
+}
 }
