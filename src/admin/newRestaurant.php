@@ -92,7 +92,7 @@ if(isset($_GET["duplication"])){
             <div class="formFlex">
             <div class="flexButtons">
                 <button type="submit"class="btn btn-primary" id="formSub">Enviar</button>
-            <a href="dashboard.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
+            <a href="panel.php"><button type="button" class="btn btn-danger">Cancelar</button></a>
             </div>
             </div>
         </form>
