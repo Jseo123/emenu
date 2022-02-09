@@ -14,7 +14,7 @@
     <?php 
 require_once "../htmls/admin-client-nav.html";
 ?>
-        <form action="./client/Control/clientLog.php?logIn" method="POST">
+        <form action="./Control/clientLog.php?logIn" method="POST">
             <h3 class="mb-3">POR FAVOR INICIE SESION</h3>
 
             <div class="form-floating mb-3">
